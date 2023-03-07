@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuckyGame</title>
+    <link rel="shortcut icon" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+     
+    <header>
+             <img src="logo.png" alt="" class="logo">
+             <nav>
+                    <a href="#" class="active">Home</a>
+                    <a href="#">About Game</a>
+                    <a href="#">Winners</a>
+                    <a href="#">Claim Prize</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Contact us</a>
+             </nav>
+           
+                 <span class="theme-btn">
+                         <span class="theme-ball"></span>
+                 </span>
+                  
+             
+             <img src="menu.png" alt="" width="30px" class="menu">
+    </header>
+    <main>
+             <section  class="banner">
+                <h1>Game of Fortune</h1>
+                <button class="get-started">GET STARTED</button>
+             </section> 
+             
+             <section class="register">
+
+                <!-- REGISTER FORM -->
+                         <div class="container">
+                              <div class="form-container">
+                                <form>
+                                    <div class="input-group">
+                                        <label>Player Name</label>
+                                        <input type="text" placeholder="e.g. Daisy" class="player-name">
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label>Stake</label>
+                                        <input type="number" placeholder="e.g. $100" class="bet-amount">
+                                    </div>
+
+                                    <div class="input-group">
+                                      
+                                       <button class="start">START</button>
+                                    </div>
+                            </form>
+
+                              <!-- GAME ENVIRONMENT -->
+
+                               <div class="game-env">
+                                     <button class="play">CLICK HERE TO PLAY</button>
+                                     <div class="lucky-numbers-basket">
+                                        <h3>Lucky Balls</h3>
+                                        <div class="balls lucky-balls">
+                                           <!-- empty for now to be generated with javascript -->
+                                        </div>
+                                     </div>
+
+                                     <div class="player-numbers-basket">
+                                        <h3>Player Balls</h3>
+                                        <div class="balls player-balls">
+                                             <!-- empty for now to be generated with javascript -->
+                                        </div>
+                                     </div>
+
+                                     <div class="prize">
+                                       <h3>Prize</h3>
+                                        <p>$<span class="stake-amount">0</span></p>
+                                     </div>
+
+                                       <input type="button" value="Click here to Play Again" onclick="window.location.reload(true)" class="play-again">
+                               </div>
+                            </div>
+                            
+                         </div>
+             </section>
+
+             <section class="prize-section">
+                  <h1>Our Prizes</h1>
+
+                  <div>
+                        <img src="money.jpg" alt="" width="100">
+                        <img src="house.jpg" alt="" width="100">
+                        <img src="car.jpg" alt="" width="100">
+                  
+                  </div>
+             </section>
+    </main>
+    <footer>
+
+       <p> &copy; Copyright 2023. All rights reserved. Designed by Codeprof Academy.</p>
+    </footer>
+    
+
+    <script src="app.js"></script>
+</body>
+</html>

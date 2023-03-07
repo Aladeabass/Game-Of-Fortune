@@ -1,0 +1,729 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+}
+
+header{
+    width: 100%;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    min-height: 120px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+    z-index: 100;
+    position: fixed;
+    transition: background-color .7s ease;
+}
+
+.logo{
+    width: 40px;
+    height: 40px;
+    border:1px solid darkred;
+    margin: 5px 0;
+    border-radius: 50%;
+    
+}
+
+
+
+nav{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px 30px;
+    border-radius: 30px;
+    
+
+}
+
+nav a{
+    color:#333;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 0 20px;
+    border-top:2px solid transparent;
+}
+
+nav a:hover{
+    border-top:2px solid crimson;
+}
+
+.active{
+    border-top:2px solid crimson;
+}
+
+/* switch-theme button */
+.theme-btn{
+    width: 40px;
+    height: 20px;
+    border:1px solid #333;
+    border-radius: 20px;
+    background-color: #333;
+    cursor: pointer;
+    position: relative;
+
+}
+
+.theme-ball{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: crimson;
+    display: block;
+    position: absolute;
+    top:0;
+    left:0;
+    transition: left 0.7s ease;
+
+}
+
+
+.menu{
+    display: none;
+}
+main{
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: white;
+    align-items: center;
+    min-height: calc(100vh - 170px);
+    margin-top: 120px;
+    transition: background-color .7s ease;
+    
+}
+
+main section{
+    width: 100%;
+    padding: 50px;
+}
+
+main .banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url("bannerbg_desktop.jpg");
+    background-size: 100%;
+    background-position: center top;
+    height: 300px;
+}
+
+
+.banner button{
+    width:fit-content;
+    background-color: crimson;
+    color:white;
+    padding: 12px 20px;
+    border:none;
+    outline:none;
+    cursor: pointer;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+
+main .banner h1{
+    color:white;
+    font-size: 50px;
+    margin: 10px 0;
+}
+
+main .register{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+  
+}
+
+.container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  
+}
+
+
+.form-container{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+}
+
+.form-container form{
+    width: 80%;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    border:2px solid crimson;
+    margin: 50px 0 40px 0;
+    
+}
+
+.form-container form .input-group{
+    width: 100%;
+    margin: 5px 0;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.input-group input{
+    width: 100%;
+    padding: 10px;
+    border:none;
+    outline: none;
+    font-size: 17px;
+    background-color: whitesmoke;
+}
+
+.input-group label{
+    font-size: 11px;
+    font-weight: 100;
+    color:black;
+    margin-bottom: 4px;
+}
+
+.input-group .start{
+    width: 100%;
+    background-color: crimson;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    border:none;
+    color:white;
+    margin-top: 20px;
+    cursor: pointer;
+    
+}
+
+.input-group .start:hover{
+    background-color: rgb(137, 76, 1);
+}
+
+.form-container .game-env{
+    width: 100%;
+    border:1px solid green;
+    margin-top: 20px;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.game-env button, .play-again{
+    width: 100%;
+    background-color: green;
+    padding: 10px;
+    border:none;
+    color:white;
+    font-size: 20px;
+    margin: 0px 0 10px 0;
+    animation: play_btn;
+    animation-iteration-count: infinite;
+    animation-duration: .5s;
+}
+
+.game-env button:hover{
+    background-color: rgb(5, 69, 5);
+    cursor: pointer;
+}
+
+.lucky-numbers-basket, .player-numbers-basket{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    background-color: aliceblue;
+}
+
+.balls{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.ball{
+    width: 40px;
+    height: 40px;
+    background:linear-gradient(45deg, green, rgb(5, 40, 5));
+    border-radius: 50%;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    font-weight: bold;
+
+}
+
+.ball2{
+    width: 40px;
+    height: 40px;
+    background:linear-gradient(45deg, red, rgb(5, 40, 5));
+    border-radius: 50%;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    font-weight: bold;
+
+}
+
+.prize{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color:green;
+    font-size: 80px;
+    font-weight: bold;
+}
+
+.prize h3{
+    font-size: 30px;
+    color:crimson;
+}
+
+.prize-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:70px;
+    margin-bottom: 50px;
+}
+
+.prize-section h1{
+    font-size: 50px;
+    font-weight: 100;
+}
+
+.prize-section div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:40px;
+}
+
+.prize-section div img{
+    width: 180px;
+    height: 150px;
+    border: 5px solid white;
+    cursor: pointer;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+}
+
+footer{
+    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    height: 50px;
+    background-color: whitesmoke;
+    transition: background-color .7s ease;
+  
+}
+
+
+
+footer p{
+    font-size: 11px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* mobile styling */
+
+@media(max-width:650px){
+  
+    header{
+        width: 100%;
+        padding: 10px 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        height: 70px;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        z-index: 100;
+        position: fixed;
+    }
+    
+    .logo{
+        width: 30px;
+        height: 30px;
+        border:1px solid darkred;
+        margin: 5px 0;
+        border-radius: 50%;
+        
+    }
+
+  
+    
+    nav{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin: 10px 0;
+        background-color: white;
+        position: absolute;
+        left:-100%;
+        top:110px;
+        padding: 20px;
+        gap:20px;
+        transition: left .5s ease-in-out;
+        border-radius: 0px;
+        
+    }
+    
+    nav a{
+        color:#333;
+        text-decoration: none;
+        font-size: 15px;
+        text-transform: uppercase;
+    }
+
+
+
+    .menu{
+        display: block;
+    }
+
+    .inverter{
+        filter: invert(1);
+    }
+
+    .show{
+        left:0%;
+    }
+    
+    main{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        min-height: calc(100vh - 170px);
+        margin-top: 70px;
+       
+      
+    }
+    
+    main section{
+        width: 100%;
+        padding: 20px;
+    }
+    
+    main .banner{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background:url("banner_bg.jpg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        height: 400px;
+    }
+    
+    
+    .banner button{
+        width:fit-content;
+        background-color: crimson;
+        color:white;
+        padding: 10px 20px;
+        border:none;
+        outline:none;
+        cursor: pointer;
+        margin: 10px 0;
+    }
+    
+    
+    main .banner h1{
+        color:white;
+        font-size: 30px;
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+        text-shadow: 8px 0px 16px rgba(0,0,0,0.7);
+    }
+    
+    main .register{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      
+    }
+    
+    .container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      
+    }
+    
+    
+    .form-container{
+        width: 100%;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        
+    }
+    
+
+    
+    .form-container form .input-group{
+        width: 100%;
+        margin: 5px 0;
+        display:flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    
+    .input-group input{
+        width: 100%;
+        padding: 10px;
+        border:none;
+        outline: none;
+        font-size: 17px;
+    }
+    
+    .input-group label{
+        font-size: 11px;
+        font-weight: 100;
+        color:black;
+        margin-bottom: 4px;
+    }
+    
+    .input-group .start{
+        width: 100%;
+        background-color: crimson;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 20px;
+        font-weight: 500;
+        border:none;
+        color:white;
+        margin-top: 20px;
+        cursor: pointer;
+        
+    }
+    
+    .input-group .start:hover{
+        background-color: rgb(137, 76, 1);
+    }
+    
+    .game-env{
+        width: 100%;
+        border:1px solid green;
+        margin-top: 20px;
+        background-color: white;
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    
+    
+    .game-env button{
+        width: 100%;
+        background-color: green;
+        padding: 10px;
+        border:none;
+        color:white;
+        font-size: 20px;
+        margin: 0px 0 10px 0;
+    }
+    
+    .game-env button:hover{
+        background-color: rgb(5, 69, 5);
+        cursor: pointer;
+    }
+    
+    .lucky-numbers-basket, .player-numbers-basket{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 20px;
+        background-color: aliceblue;
+    }
+    
+    .balls{
+        width: 100%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+    
+    .ball{
+        width: 30px;
+        height: 30px;
+        background:linear-gradient(45deg, green, rgb(5, 40, 5));
+        border-radius: 50%;
+        margin: 0 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color:white;
+        font-weight: bold;
+    
+    }
+    
+    .ball2{
+        width: 30px;
+        height: 30px;
+        background:linear-gradient(45deg, red, rgb(5, 40, 5));
+        border-radius: 50%;
+        margin: 0 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color:white;
+        font-weight: bold;
+    
+    }
+    
+    .prize{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        color:green;
+        font-size: 40px;
+        font-weight: bold;
+        margin-top: 30px;
+        padding: 20px 0;
+    }
+    
+    .prize h3{
+        font-size: 30px;
+        color:crimson;
+    }
+
+    .prize-section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap:70px;
+        margin-bottom: 50px;
+    }
+    
+    .prize-section h1{
+        font-size: 40px;
+        font-weight: 100;
+    }
+    
+    .prize-section div{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap:40px;
+    }
+    
+    .prize-section div img{
+        width: 200px;
+        height: 170px;
+        border: 5px solid white;
+        cursor: pointer;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    }
+    
+
+}
+
+/* controller classes */
+.move-right{
+    left:19px;
+}
+
+.dark-theme{
+    background-color: #222;
+    color:white;
+}
+
+.dark-theme-nav{
+    background-color: #111;
+    color:white;
+}
+
+.dark-theme-link{
+    color:white;
+}
+
+.dark-theme-prize{
+    background-color: black;
+}
+
+
+@keyframes play_btn{
+    from{
+        background-color: rgb(8, 58, 8);
+    }
+
+    to{
+        background-color: rgb(28, 175, 28);
+    }
+}
